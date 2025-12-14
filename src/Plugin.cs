@@ -9,10 +9,14 @@ using System.Security.Permissions;
 
 namespace TestMod;
 
-[BepInPlugin("com.author.testmod", "Test Mod", "0.1.0")]
-sealed class Plugin : BaseUnityPlugin
+[BepInPlugin(MODID, MODNAME, MODVERSION)]
+public class ModPlugin : BaseUnityPlugin
 {
     public static new ManualLogSource Logger;
+
+    public const string MODID = "com.author.testmod";
+    public const string MODNAME = "Test Mod";
+    public const string MODVERSION = "0.1.0";
     bool IsInit;
 
     public void OnEnable()
@@ -29,6 +33,6 @@ sealed class Plugin : BaseUnityPlugin
         IsInit = true;
 
         // Initialize assets, your mod config, and anything that uses RainWorld here
-        Logger.LogDebug("Hello world!");
+        Logger.LogDebug($"[{MODID}] {MODNAME} Hello world! {MODVERSION}");
     }
 }
