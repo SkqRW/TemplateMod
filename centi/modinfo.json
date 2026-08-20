@@ -1,0 +1,11 @@
+﻿{
+  "id": "seko.centi",
+  "name": "Centi",
+  "version": "0.1.0",
+  "authors": "Seko",
+  "description": "A mod that adds a new centipede creature to the game",
+  "tags": ["Creatures"],
+  "requirements": ["fisobs"],
+  "requirements_names": ["Fisobs"],
+  "checksum_override_version": false
+}

@@ -1,6 +1,7 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
 using System.Security.Permissions;
+using Fisobs.Core;
 
 // Allows access to private members
 #pragma warning disable CS0618
@@ -14,15 +15,22 @@ public class ModPlugin : BaseUnityPlugin
 {
     public static new ManualLogSource Logger;
 
-    public const string MODID = "com.author.testmod";
-    public const string MODNAME = "Test Mod";
+    public const string MODID = "seko.centi";
+    public const string MODNAME = "Centi";
     public const string MODVERSION = "0.1.0";
     bool IsInit;
 
     public void OnEnable()
     {
         Logger = base.Logger;
+        
+        
+
+
         On.RainWorld.OnModsInit += OnModsInit;
+
+        Content.Register(new CentiTest.CentiCritob());
+
     }
 
     private void OnModsInit(On.RainWorld.orig_OnModsInit orig, RainWorld self)
